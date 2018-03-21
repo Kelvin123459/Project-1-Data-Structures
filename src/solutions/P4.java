@@ -13,11 +13,19 @@ public class P4<E> extends AbstractIntersectionFinder{
 		super(name);
 		// TODO Auto-generated constructor stub
 	}
-
+	/*
+	 * (non-Javadoc)
+	 * @see interfaces.IntersectionFinder#intersectSets(interfaces.MySet[])
+	 * Method intersectSets implemented by P3
+	 * @param t array containing the family of sets to be intersected. 
+	 * @return the final intersection set (the result of intersecting all sets in t) 
+	 * If the count of an element is equal to m(50 in this scenario) then add to t1 (representing set T) 
+	 * Implements HashMaps, unlike P3
+	 */
 	@Override
 	public MySet intersectSets(MySet[] t) {
-		ArrayToList arrayToList = new ArrayToList();
-		ArrayList<E> allElements= arrayToList.arrayToList(t);
+		ArrayToList arrayToList = new ArrayToList(); //see ArrayToList class.
+		ArrayList<E> allElements= arrayToList.arrayToList(t); // Method converts array t to arrayList.
 		HashMap<E, Integer> map = new HashMap<>(); 
 		for (E e : allElements) { 
 		     Integer c = map.getOrDefault(e, 0); 
@@ -28,6 +36,6 @@ public class P4<E> extends AbstractIntersectionFinder{
 			if (entry.getValue() == 50) 
 		        t1.add(entry.getKey());	
 		}
-		return t1;
+		return t1; //return t1 (representing T)
 	}
 }

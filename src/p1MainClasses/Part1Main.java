@@ -15,14 +15,18 @@ import solutions.P4;
 public class Part1Main<E>{
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static void main(String[] args) throws FileNotFoundException {
-		P1P2 intersecter = new P1P2("P1P2");
-		P3 p3Intersecter = new P3("P3");
-		P4 p4Intersecter = new P4("P4");
-		Scanner parameters = new Scanner(new File("inputFiles", "parameters.txt")); 
-		int n = parameters.nextInt(); 
-		int m = parameters.nextInt();
-		parameters.close();
-		Set1[] s1 = new Set1[m];
+		P1P2 intersecter = new P1P2("P1P2"); //to call intersectSets P1P2
+		P3 p3Intersecter = new P3("P3"); // to call intersectSets P3
+		P4 p4Intersecter = new P4("P4"); //to call intersectSets P4
+		Scanner parameters = new Scanner(new File("inputFiles", "parameters.txt")); //find parameters.txt in folder inputFiles
+		int n = parameters.nextInt(); //parameter n 
+		int m = parameters.nextInt(); //parameter m
+		parameters.close(); //scanner closure
+		
+		/******************
+		 * Check if s2 can be used with P3 and P4
+		 */
+		Set1[] s1 = new Set1[m]; 
 		Set2[] s2 = new Set2[m];
 		Set2[] s3 = new Set2[m];
 		Set2[] s4 = new Set2[m];
@@ -42,22 +46,29 @@ public class Part1Main<E>{
 		System.out.println("Solution P4: \n"+p4Intersecter.intersectSets(p4).toString());
 
 	}	
+	/*
+	 * (non-Javadoc)
+	 * Method unionWriter implemented by all solutions
+	 * @param set array containing the family of sets to be united. 
+	 * @return the final union set (the result of the union of all sets) 
+	 *  
+	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static MySet[] unionWriter(MySet[] set) throws FileNotFoundException{
-		DataReader reader = new DataReader();
-		Scanner parameters = new Scanner(new File("inputFiles", "parameters.txt")); 
-		int n = parameters.nextInt(); 
-		int m = parameters.nextInt();
-		parameters.close();
-		Integer[][][] data = (Integer[][][]) reader.readDataFiles();
+		DataReader reader = new DataReader(); 
+		Scanner parameters = new Scanner(new File("inputFiles", "parameters.txt")); //Find parameters.txt in folder inputFiles
+		int n = parameters.nextInt(); //set variable n (20 in this scenario)
+		int m = parameters.nextInt(); //set variable m (50 in this scenario)
+		parameters.close(); //scanner closure
+		Integer[][][] data = (Integer[][][]) reader.readDataFiles(); 
 		for(int j = 0 ; j<m ; j++ ) {
 			for(int i=0; i<n; i++) {
 				for(int k = 0 ; k < data[i][j].length; k++) {
-					set[j].add(data[i][j][k]);
+					set[j].add(data[i][j][k]); 
 				}
 			}
 		}
-		return set;
+		return set; //return union set
 	}
 	
 }
