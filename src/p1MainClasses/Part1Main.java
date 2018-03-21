@@ -14,23 +14,6 @@ import solutions.P4;
 
 public class Part1Main<E>{
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public static MySet[] unionWriter(MySet[] set) throws FileNotFoundException{
-		DataReader reader = new DataReader();
-		Scanner parameters = new Scanner(new File("inputFiles", "parameters.txt")); 
-		int n = parameters.nextInt(); 
-		int m = parameters.nextInt();
-		parameters.close();
-		Integer[][][] data = (Integer[][][]) reader.readDataFiles();
-		for(int j = 0 ; j<m ; j++ ) {
-			for(int i=0; i<n; i++) {
-				for(int k = 0 ; k < data[i][j].length; k++) {
-					set[j].add(data[i][j][k]);
-				}
-			}
-		}
-		return set;
-	}
-	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static void main(String[] args) throws FileNotFoundException {
 		P1P2 intersecter = new P1P2("P1P2");
 		P3 p3Intersecter = new P3("P3");
@@ -59,5 +42,22 @@ public class Part1Main<E>{
 		System.out.println("Solution P4: \n"+p4Intersecter.intersectSets(p4).toString());
 
 	}	
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	public static MySet[] unionWriter(MySet[] set) throws FileNotFoundException{
+		DataReader reader = new DataReader();
+		Scanner parameters = new Scanner(new File("inputFiles", "parameters.txt")); 
+		int n = parameters.nextInt(); 
+		int m = parameters.nextInt();
+		parameters.close();
+		Integer[][][] data = (Integer[][][]) reader.readDataFiles();
+		for(int j = 0 ; j<m ; j++ ) {
+			for(int i=0; i<n; i++) {
+				for(int k = 0 ; k < data[i][j].length; k++) {
+					set[j].add(data[i][j][k]);
+				}
+			}
+		}
+		return set;
+	}
 	
 }
