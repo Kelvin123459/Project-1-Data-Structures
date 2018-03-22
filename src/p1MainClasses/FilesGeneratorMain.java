@@ -3,8 +3,6 @@ package p1MainClasses;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
-import java.util.Scanner;
-
 import dataGenerator.DataGenerator;
 
 public class FilesGeneratorMain {

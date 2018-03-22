@@ -15,11 +15,12 @@ public class Part2Methodology<E>{
 	private int repetitionsPerSize;    // experimental repetitions per size
 	private int incrementalSizeStep;   // change of sizes (size delta)
 	private int finalSize;             // last size to be tested
-	private static int paramN;
-	private static int paramM;
+	private static int paramN; 		   // parameter n
+	private static int paramM;		   // parameter m
 	
 	private ArrayList<StrategiesTimeCollection<E>> resultsPerStrategy; 
 	
+	//Part2Methodology constructor
 	public Part2Methodology(int n, int m, int is, int fs, int iss, int rps) { 
 		paramN = n;
 		paramM = m;
@@ -31,10 +32,12 @@ public class Part2Methodology<E>{
 
 	}
 	
+	//adds the strategy to run
 	public void addStrategy(StrategiesTimeCollection<E> strategy) { 
 		resultsPerStrategy.add(strategy); 
 	}
 
+	
 	public void run() throws CloneNotSupportedException, FileNotFoundException { 
 		if (resultsPerStrategy.isEmpty())
 			throw new IllegalStateException("No strategy has been added."); 
@@ -105,5 +108,11 @@ public class Part2Methodology<E>{
 			
 		out.close();
 		
+	}
+	public static int getParamM(){
+		return paramM;
+	}
+	public static int getParamN(){
+		return paramN;
 	}
 }

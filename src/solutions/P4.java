@@ -14,7 +14,6 @@ public class P4<E> extends AbstractIntersectionFinder{
 		super(name);
 		// TODO Auto-generated constructor stub
 	}
-	ArrayToList arrayToList = new ArrayToList(); //see ArrayToList class.
 	/*
 	 * (non-Javadoc)
 	 * @see interfaces.IntersectionFinder#intersectSets(interfaces.MySet[])
@@ -27,7 +26,8 @@ public class P4<E> extends AbstractIntersectionFinder{
 	@SuppressWarnings("unchecked")
 	@Override
 	public MySet intersectSets(MySet[] t) {
-		ArrayList<E> allElements= arrayToList.arrayToList(t); // Method converts array t to arrayList.
+		UnionFinder uf = new UnionFinder();
+		ArrayList<E> allElements= uf.arrayToList(t); // Method converts array t to arrayList.
 		HashMap<E, Integer> map = new HashMap<>(); 
 		for (E e : allElements) { 
 		     Integer c = map.getOrDefault(e, 0); 

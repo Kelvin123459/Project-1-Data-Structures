@@ -1,8 +1,6 @@
 package solutions;
 
 import interfaces.MySet;
-import mySetImplementations.Set1;
-import mySetImplementations.Set2;
 import setIntersectionFinders.AbstractIntersectionFinder;
 
 public class P1P2<E> extends AbstractIntersectionFinder<E>{
