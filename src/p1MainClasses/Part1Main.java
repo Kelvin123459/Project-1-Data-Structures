@@ -11,64 +11,36 @@ import mySetImplementations.Set2;
 import solutions.P1P2;
 import solutions.P3;
 import solutions.P4;
+import solutions.UnionFinder;
 
 public class Part1Main<E>{
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static void main(String[] args) throws FileNotFoundException {
-		P1P2 intersecter = new P1P2("P1P2"); //to call intersectSets P1P2
-		P3 p3Intersecter = new P3("P3"); // to call intersectSets P3
-		P4 p4Intersecter = new P4("P4"); //to call intersectSets P4
+		UnionFinder uf = new UnionFinder();
+		DataReader reader = new DataReader(); 
+		Object[][][] data =  reader.readDataFiles();
 		Scanner parameters = new Scanner(new File("inputFiles", "parameters.txt")); //find parameters.txt in folder inputFiles
 		int n = parameters.nextInt(); //parameter n 
 		int m = parameters.nextInt(); //parameter m
-		parameters.close(); //scanner closure
+		parameters.close();
+		P1P2 intersecter = new P1P2("P1P2"); //to call intersectSets P1P2
+		P3 p3Intersecter = new P3("P3"); // to call intersectSets P3
+		P4 p4Intersecter = new P4("P4"); //to call intersectSets P4
+		MySet[] s1 = uf.unionWriter(data, "P1", n, m);
+		MySet[] s2 = uf.unionWriter(data, "P2", n, m);
+		MySet[] s3 = uf.unionWriter(data, "P3", n, m);
+		MySet[] s4 = uf.unionWriter(data, "P4", n, m);
+
 		
-		/******************
-		 * Check if s2 can be used with P3 and P4
-		 */
-		Set1[] s1 = new Set1[m]; 
-		Set2[] s2 = new Set2[m];
-		Set2[] s3 = new Set2[m];
-		Set2[] s4 = new Set2[m];
-		for(int i=0; i<s1.length&&i<s2.length;i++){
-			s1[i] = new Set1<Integer>();
-			s2[i] = new Set2<Integer>();
-			s3[i] = new Set2<Integer>();
-			s4[i] = new Set2<Integer>();
-		}
-		Set1<Object>[] p1 = (Set1[]) unionWriter(s1);
-		System.out.println("Solution P1: \n"+intersecter.intersectSets(p1).toString());
-		Set2<Object>[] p2 = (Set2[]) unionWriter(s2);
-		System.out.println("Solution P2: \n"+intersecter.intersectSets(p2).toString());
-		Set2<Object>[] p3 = (Set2[]) unionWriter(s3);
-		System.out.println("Solution P3: \n"+p3Intersecter.intersectSets(p3).toString());
-		Set2<Object>[] p4 = (Set2[]) unionWriter(s4);
-		System.out.println("Solution P4: \n"+p4Intersecter.intersectSets(p4).toString());
+		Set1<Object> p1 = (Set1<Object>) intersecter.intersectSets(s1);
+		System.out.println("Solution P1: \n"+p1.toString());
+		Set2<Object> p2 = (Set2<Object>) intersecter.intersectSets(s2);
+		System.out.println("Solution P2: \n"+p2.toString());
+		Set2<Object> p3 = (Set2<Object>) p3Intersecter.intersectSets(s3);
+		System.out.println("Solution P3: \n"+p3.toString());
+		Set2<Object> p4 = (Set2<Object>) p4Intersecter.intersectSets(s4);
+		System.out.println("Solution P4: \n"+p4.toString());
 
 	}	
-	/*
-	 * (non-Javadoc)
-	 * Method unionWriter implemented by all solutions
-	 * @param set array containing the family of sets to be united. 
-	 * @return the final union set (the result of the union of all sets) 
-	 *  
-	 */
-	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public static MySet[] unionWriter(MySet[] set) throws FileNotFoundException{
-		DataReader reader = new DataReader(); 
-		Scanner parameters = new Scanner(new File("inputFiles", "parameters.txt")); //Find parameters.txt in folder inputFiles
-		int n = parameters.nextInt(); //set variable n (20 in this scenario)
-		int m = parameters.nextInt(); //set variable m (50 in this scenario)
-		parameters.close(); //scanner closure
-		Integer[][][] data = (Integer[][][]) reader.readDataFiles(); 
-		for(int j = 0 ; j<m ; j++ ) {
-			for(int i=0; i<n; i++) {
-				for(int k = 0 ; k < data[i][j].length; k++) {
-					set[j].add(data[i][j][k]); 
-				}
-			}
-		}
-		return set; //return union set
-	}
 	
 }

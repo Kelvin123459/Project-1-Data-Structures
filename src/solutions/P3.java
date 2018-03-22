@@ -16,6 +16,7 @@ public class P3<E> extends AbstractIntersectionFinder{
 		super(name);
 		// TODO Auto-generated constructor stub
 	}
+	ArrayToList arrayToList = new ArrayToList(); //see ArrayToList class. Method converts array to arrayList.
 	/*
 	 * (non-Javadoc)
 	 * @see interfaces.IntersectionFinder#intersectSets(interfaces.MySet[])
@@ -28,7 +29,6 @@ public class P3<E> extends AbstractIntersectionFinder{
 	@Override
 	public MySet intersectSets(MySet[] t) {
 		MySet<E> t1 = new Set2();  // sets in P3's solution are of type Set2
-		ArrayToList arrayToList = new ArrayToList(); //see ArrayToList class. Method converts array to arrayList.
 		ArrayList<E> allElements= arrayToList.arrayToList(t); //set everyElement of t into allElements list.
 		allElements.sort(null);	
 		E e = allElements.get(0); 
@@ -37,13 +37,13 @@ public class P3<E> extends AbstractIntersectionFinder{
 		    if (allElements.get(i).equals(e)) 
 		       c++;
 		    else { 
-		       if (c == 50)  // m is as in the previous discussion. 50 used to avoid FileNotFoundException
+		       if (c == t.length)  // m is as in the previous discussion. 50 used to avoid FileNotFoundException
 		          t1.add(e);  //if element count equals m, then add to t1.  
 		       e = allElements.get(i); 
 		       c = 1; 
 		    } 
 		}
-		if (c == 50)
+		if (c == t.length)
 		    t1.add(allElements.get(allElements.size()-1));
 		return t1; //returns set t1 (representing T)
 	}

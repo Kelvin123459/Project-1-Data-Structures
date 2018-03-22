@@ -8,11 +8,13 @@ import interfaces.MySet;
 import mySetImplementations.Set2;
 import setIntersectionFinders.AbstractIntersectionFinder;
 
+@SuppressWarnings("rawtypes")
 public class P4<E> extends AbstractIntersectionFinder{
 	public P4(String name) {
 		super(name);
 		// TODO Auto-generated constructor stub
 	}
+	ArrayToList arrayToList = new ArrayToList(); //see ArrayToList class.
 	/*
 	 * (non-Javadoc)
 	 * @see interfaces.IntersectionFinder#intersectSets(interfaces.MySet[])
@@ -22,9 +24,9 @@ public class P4<E> extends AbstractIntersectionFinder{
 	 * If the count of an element is equal to m(50 in this scenario) then add to t1 (representing set T) 
 	 * Implements HashMaps, unlike P3
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public MySet intersectSets(MySet[] t) {
-		ArrayToList arrayToList = new ArrayToList(); //see ArrayToList class.
 		ArrayList<E> allElements= arrayToList.arrayToList(t); // Method converts array t to arrayList.
 		HashMap<E, Integer> map = new HashMap<>(); 
 		for (E e : allElements) { 
