@@ -1,9 +1,7 @@
 # Project-1-Data-Structures
-Kelvin Garcia Muñiz
-
-802142644
-
-CIIC4020 - 030
+## Kelvin Garcia Muñiz
+## 802142644
+## CIIC4020 - 030
 
 ## To Run the Program:
 Before executing any of these commands from the CMD or Terminal make sure you are in the correct directory path. If using Eclipse or a 
@@ -54,6 +52,20 @@ In order tu understand the hierarchy of the classes, head to the "UML Kelvin Gar
        Set2.java (public) - used by the remaining strategie and implements HashMaps
   ### Package p1MainClasses
    #### Includes: 
-       FilesGeneratorMain.java - generates the files to be used in Part 1, with the given number of crimes and companies
-       Part1Main.java - main class to run Part1 of the project. Outputs the intersections given by each of the strategies
-       Part2Main.java - main class to run Part2 of the project. Outputs the execution times of the strategies given certain parameters. (See "To Run the program" or head to the in-code implementation of the class for more information)
+       FilesGeneratorMain.java (public) - generates the files to be used in Part 1, with the given number of crimes and companies
+       Part1Main.java (public) - main class to run Part1 of the project. Outputs the intersections given by each of the strategies
+       Part2Main.java (public) - main class to run Part2 of the project. Outputs the execution times of the strategies given certain parameters. (See "To Run the program" or head to the in-code implementation of the class for more information)
+  ### Package setIntersectionFinders
+   #### Includes:
+       AbstractIntersectionFinder.java (public abstract) - an abstract class of IntersectionFinder
+  ### Package solutionsAndAidClasses
+   #### Includes:
+       P1P2.java (public) - contains the instersectSets method with the implementation used for P1 and P2
+       P3.java (public) - contains the instersectSets method with the implementation used for P3
+       P4.java (public) - contains the instersectSets method with the implementation used for P4
+       Part2Methodology.java (public) - includes constructor needed to run Part 2 in Part2Main.java with specfied parameters. 
+                     Generates data and saves results
+       StrategiesTimeCollection - includes auxiliary methods to aid in the management of time data
+       UnionFinder - countains methods unionWriter and arrayToList. The first is implemented by all strategies and returns the 
+                     corresponding set representing the union
+       
