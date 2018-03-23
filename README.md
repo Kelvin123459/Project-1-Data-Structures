@@ -85,7 +85,7 @@ In order to understand the hierarchy of the classes, head to the "UML Kelvin Gar
   ### Package testerClasses
    #### Includes: 
        DataGeneratorTester.java (public) - a tester for the DataGenerator.java class
-  ### Directory inputFiles
+  ### Directory doc
    #### Includes:
           All proper java documentation for created methods and classes 
   ### Directory inputFiles
