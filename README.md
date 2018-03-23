@@ -41,10 +41,19 @@ This part produces the empirical results for the execution times of each one of 
 In order tu understand the hierarchy of the classes, head to the "UML Kelvin Garcia CIIC4020-030.ucls" file or to the "README.pdf" file.
   ### Package dataGenerator
    #### Includes:
-       DataGenerator.java: generates the data given parameter n, m, and totalSize
-       DataReader.java: reads the data from the files generated
+       DataGenerator.java (public): generates the data given parameter n, m, and totalSize
+       DataReader.java (public): reads the data from the files generated
   ### Package interfaces
    #### Includes:
        IntersectionFinder.java (interface) - an objects of type finds the intersection of a family of sets.
        MySet.java (interface) - used by the intersectSets methods that the experiments will be implementing.
-      
+  ### Package mySetImplementations
+   #### Includes: 
+       AbstractMySet.java (public abstract)- an abstract class of MySet.
+       Set1.java (public) - used by strategy P1 and implements ArrayLists
+       Set2.java (public) - used by the remaining strategie and implements HashMaps
+  ### Package p1MainClasses
+   #### Includes: 
+       FilesGeneratorMain.java - generates the files to be used in Part 1, with the given number of crimes and companies
+       Part1Main.java - main class to run Part1 of the project. Outputs the intersections given by each of the strategies
+       Part2Main.java - main class to run Part2 of the project. Outputs the execution times of the strategies given certain parameters. (See "To Run the program" or head to the in-code implementation of the class for more information)
