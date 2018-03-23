@@ -89,7 +89,7 @@ public class Part2Methodology<E>{
 	 * @throws FileNotFoundException
 	 */
 	public void saveResults() throws FileNotFoundException { //save results to file
-		PrintStream out = new PrintStream(new File("part2Results", "allResults.txt")); //print results in file allResults, folder part2Results
+		PrintStream out = new PrintStream(new File("experimentalResults", "allResults.txt")); //print results in file allResults, folder part2Results
 		out.print("Size");
 		for (StrategiesTimeCollection<E> trc : resultsPerStrategy) 
 			out.print("\t" + trc.getStrategyName()); 
