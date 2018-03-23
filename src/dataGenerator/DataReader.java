@@ -1,3 +1,6 @@
+//Kelvin Garcia Muñiz
+//802142644
+//CIIC4020 - 030
 package dataGenerator;
 import java.io.File;
 import java.io.FileNotFoundException;

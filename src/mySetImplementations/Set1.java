@@ -1,7 +1,9 @@
+//Kelvin Garcia Muñiz
+//802142644
+//CIIC4020 - 030
 package mySetImplementations;
 
 import interfaces.MySet;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 
