@@ -10,12 +10,21 @@ import solutionsAndAidClasses.P3;
 import solutionsAndAidClasses.P4;
 import solutionsAndAidClasses.Part2Methodology;
 import solutionsAndAidClasses.StrategiesTimeCollection;
-
+/**
+ * Main class for Part 2
+ * @author Kelvin García
+ *
+ */
 public class Part2Main {
 
 	private static int[] parms = {10, 50, 1000, 50000, 1000, 200};
 	// min size, max size, size increment, number of trials per size/strategy
-	
+	/**
+	 * Main method for Part 2. Contains all the methods to save and run the analisis of the strategies
+	 * @param args
+	 * @throws CloneNotSupportedException
+	 * @throws FileNotFoundException
+	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static void main(String[] args) throws CloneNotSupportedException, FileNotFoundException {
 		if (args.length > 6) //if the number of parameters is greater than 6 print message on screen

@@ -7,7 +7,12 @@ import interfaces.IntersectionFinder;
 import interfaces.MySet;
 import java.util.ArrayList;
 import java.util.Map;
-
+/**
+ * Contains the needed method to aid in the collection of time data
+ * @author Kelvin Garcia
+ *
+ * @param <E>
+ */
 @SuppressWarnings("serial")
 public class StrategiesTimeCollection<E> extends ArrayList<Map.Entry<Integer, Float>> { 
 	public UnionFinder<E> uf = new UnionFinder<E>(); //to be used by the runTrial method
@@ -19,6 +24,10 @@ public class StrategiesTimeCollection<E> extends ArrayList<Map.Entry<Integer, Fl
     public String getStrategyName() { 
         return strategy.getName(); 
     }
+    /**
+     * 
+     * @param data corresponds to the data used to run the strategies
+     */
     @SuppressWarnings({ "rawtypes", "unchecked" })
 	public void runTrial(Object[][][] data){
     		//initializes the set with the defined data and strategy (P1, P2, P3, P4)

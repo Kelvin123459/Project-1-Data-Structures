@@ -11,7 +11,11 @@ import java.util.ArrayList;
 
 import dataGenerator.DataGenerator;
 import solutionsAndAidClasses.StrategiesTimeCollection;
-
+/**
+ * includes constructor needed to run Part 2 in Part2Main.java with specified parameters. Generates data and saves results
+ * @author Kelvin Garcia
+ * @param <E>
+ */
 public class Part2Methodology<E>{
 	private int initialSize;           // initial size to be tested
 	private int repetitions;    // experimental repetitions per size
@@ -31,9 +35,18 @@ public class Part2Methodology<E>{
 		fSize = fs; 
 		resultsPerStrategy = new ArrayList<>(); 
 	}
-	public void addStrategy(StrategiesTimeCollection<E> strategy) { //adds the strategy to run
+	/**
+	 * adds the strategy to run
+	 * @param strategy experiment to be run
+	 */
+	public void addStrategy(StrategiesTimeCollection<E> strategy) { 
 		resultsPerStrategy.add(strategy); 
 	}
+	/**
+	 * runs the specified strategy
+	 * @throws CloneNotSupportedException
+	 * @throws FileNotFoundException
+	 */
 	public void run() throws CloneNotSupportedException, FileNotFoundException { 
 		if (resultsPerStrategy.isEmpty())
 			throw new IllegalStateException("No strategy has been added."); 
@@ -60,12 +73,21 @@ public class Part2Methodology<E>{
 			System.out.println(size); //print the current size
 		}
 	}
+	/**
+	 * generates the data with the specified parameters
+	 * @param size
+	 * @return
+	 */
 	private Object[][][] generateData(int size) { //generate the data to be used
 		DataGenerator dg = new DataGenerator(paramN, paramM, size);
 		Object[][][] data = dg.generateData();  
 
 		return data;
 	}
+	/**
+	 * Saves the data into the destined file (parentDirectory, fileName)
+	 * @throws FileNotFoundException
+	 */
 	public void saveResults() throws FileNotFoundException { //save results to file
 		PrintStream out = new PrintStream(new File("part2Results", "allResults.txt")); //print results in file allResults, folder part2Results
 		out.print("Size");

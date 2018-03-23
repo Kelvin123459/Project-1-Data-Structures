@@ -7,15 +7,19 @@ import java.util.ArrayList;
 import interfaces.MySet;
 import mySetImplementations.Set2;
 import setIntersectionFinders.AbstractIntersectionFinder;
-
+/**
+ * Implementation of Solution P3
+ * @author Kelvin Garcia
+ *
+ * @param <E>
+ */
 @SuppressWarnings("rawtypes")
 public class P3<E> extends AbstractIntersectionFinder{
 	public P3(String name) {
 		super(name);
 		// TODO Auto-generated constructor stub
 	}
-	/*
-	 * (non-Javadoc)
+	/**
 	 * @see interfaces.IntersectionFinder#intersectSets(interfaces.MySet[])
 	 * Method intersectSets implemented by P3
 	 * @param t array containing the family of sets to be intersected. 

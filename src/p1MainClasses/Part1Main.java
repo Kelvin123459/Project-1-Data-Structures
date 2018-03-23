@@ -12,8 +12,19 @@ import solutionsAndAidClasses.P1P2;
 import solutionsAndAidClasses.P3;
 import solutionsAndAidClasses.P4;
 import solutionsAndAidClasses.UnionFinder;
-
+/**
+ * Main class for Part 1
+ * @author Kelvin Garcia
+ *
+ * @param <E>
+ */
 public class Part1Main<E>{
+	/**
+	 * Main method for Part1.
+	 * Contains series of conditions to be used primarily by the terminal
+	 * @param args
+	 * @throws FileNotFoundException
+	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static void main(String[] args) throws FileNotFoundException {
 		UnionFinder uf = new UnionFinder(); //to initialize the sets
@@ -21,7 +32,8 @@ public class Part1Main<E>{
 		Object[][][] data =  reader.readDataFiles(); //data initialization
 		args = new String[1];
 		args[0] = null;
-		P1P2 intersecter = new P1P2("P1P2"); //to call intersectSets P1P2
+		P1P2 intersecter = new P1P2("P1"); //to call intersectSets P1
+		P1P2 p2intersecter = new P1P2("P2"); //to call intersects P2
 		P3 p3Intersecter = new P3("P3"); // to call intersectSets P3
 		P4 p4Intersecter = new P4("P4"); //to call intersectSets P4
 		MySet[] s1 = uf.unionWriter(data, "P1"); //intializes s1 to type Set1
@@ -36,7 +48,7 @@ public class Part1Main<E>{
 				System.out.println("Solution P1: \n"+p1.toString()); //prints p1
 			}
 			if(args[0]=="2"){ //argument 2
-				Set2<Object> p2 = (Set2<Object>) intersecter.intersectSets(s2); //initializes p2 to the intersection of sets using strategy P2
+				Set2<Object> p2 = (Set2<Object>) p2intersecter.intersectSets(s2); //initializes p2 to the intersection of sets using strategy P2
 				System.out.println("Solution P2: \n"+p2.toString()); //prints p2
 			}
 			if(args[0]=="3"){ //argument 3
@@ -50,7 +62,7 @@ public class Part1Main<E>{
 			if(args[0]==null){ //no argument is given. Eclipse would execute this condition
 				Set1<Object> p1 = (Set1<Object>) intersecter.intersectSets(s1); //initializes p1 to the intersection of sets using strategy P1
 				System.out.println("Solution P1: \n"+p1.toString()); //prints p1
-				Set2<Object> p2 = (Set2<Object>) intersecter.intersectSets(s2); //initializes p2 to the intersection of sets using strategy P2
+				Set2<Object> p2 = (Set2<Object>) p2intersecter.intersectSets(s2); //initializes p2 to the intersection of sets using strategy P2
 				System.out.println("Solution P2: \n"+p2.toString()); //prints p2
 				Set2<Object> p3 = (Set2<Object>) p3Intersecter.intersectSets(s3); //initializes p3 to the intersection of sets using strategy P3
 				System.out.println("Solution P3: \n"+p3.toString()); //prints p3

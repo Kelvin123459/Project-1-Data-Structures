@@ -7,10 +7,14 @@ import java.util.ArrayList;
 import interfaces.MySet;
 import mySetImplementations.Set1;
 import mySetImplementations.Set2;
-
+/**
+ * Contains methods to facilitate and enable the implementations of the strategies
+ * @author Kelvin Garcia
+ *
+ * @param <E>
+ */
 public class UnionFinder <E>{
-	/*
-	 * (non-Javadoc)
+	/**
 	 * Method unionWriter implemented by all solutions
 	 * @param data containing a 3d array with the data to be used
 	 * @param s containing a String with the desired strategy (P1, P2, P3, P4)
@@ -37,8 +41,7 @@ public class UnionFinder <E>{
 		}
 		return t; //return union set
 	}
-	/*
-	 * (non-Javadoc)
+	/**
 	 * Method arrayToList implemented by P3 & P4 solutions
 	 * @param t array containing the family of sets to be intersected
 	 * @return list containing the family of sets to be intersected 
