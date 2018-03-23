@@ -37,5 +37,14 @@ Output produces the results for a particular input in which the intersection of 
 elements. (See results sample in "Part1 Sample Results Sheet.pdf")
 ## Part 2:
 This part produces the empirical results for the execution times of each one of the four strategies in "part2Results/allResults.txt". (See running results sample graphs in "Part 2 Sample Results Sheets.pdf").
-##Understanding the code:
+## Understanding the code:
 In order tu understand the hierarchy of the classes, head to the "UML Kelvin Garcia CIIC4020-030.ucls" file or to the "README.pdf" file.
+  ### Package dataGenerator
+   #### Includes:
+       DataGenerator.java: generates the data given parameter n, m, and totalSize
+       DataReader.java: reads the data from the files generated
+  ### Package interfaces
+   #### Includes:
+       IntersectionFinder.java (interface) - an objects of type finds the intersection of a family of sets.
+       MySet.java (interface) - used by the intersectSets methods that the experiments will be implementing.
+      
