@@ -32,9 +32,10 @@ From terminal: java -classpath ./bin  p1MainClasses/Part2Main  n  m  isize  fsiz
      * For detailed information head to the in-code implementation *
 From IDE: Run Part2Main.java, with the desired parameters, from the p1MainClasses package
 ## Part 1:
-This part includes a working version of the four strategies to be implemented (P1, P2, P3, P4)
+This part includes a working version of the four strategies to be implemented (P1, P2, P3, P4). 
 Output produces the results for a particular input in which the intersection of all the sets is the set containing the corresponding
 elements. (See results sample in "Part1 Sample Results Sheet.pdf")
 ## Part 2:
-This part produces the empirical results for the execution times of each one of the four strategies. (See running results sample graphs
-in "Part 2 Sample Results Sheets.pdf")
+This part produces the empirical results for the execution times of each one of the four strategies in "part2Results/allResults.txt". (See running results sample graphs in "Part 2 Sample Results Sheets.pdf").
+##Understanding the code:
+In order tu understand the hierarchy of the classes, head to the "UML Kelvin Garcia CIIC4020-030.ucls" file or to the "README.pdf" file.
