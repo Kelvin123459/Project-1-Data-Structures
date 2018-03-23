@@ -1,4 +1,4 @@
-package solutions;
+package solutionsAndAidClasses;
 
 import interfaces.MySet;
 import setIntersectionFinders.AbstractIntersectionFinder;

@@ -5,10 +5,10 @@ import dataGenerator.DataReader;
 import interfaces.MySet;
 import mySetImplementations.Set1;
 import mySetImplementations.Set2;
-import solutions.P1P2;
-import solutions.P3;
-import solutions.P4;
-import solutions.UnionFinder;
+import solutionsAndAidClasses.P1P2;
+import solutionsAndAidClasses.P3;
+import solutionsAndAidClasses.P4;
+import solutionsAndAidClasses.UnionFinder;
 
 public class Part1Main<E>{
 	@SuppressWarnings({ "unchecked", "rawtypes" })

@@ -1,4 +1,4 @@
-package solutions;
+package solutionsAndAidClasses;
 
 import interfaces.IntersectionFinder;
 import interfaces.MySet;
@@ -9,8 +9,7 @@ import java.util.Map;
 public class StrategiesTimeCollection<E> extends ArrayList<Map.Entry<Integer, Float>> { 
 	public UnionFinder<E> uf = new UnionFinder<E>(); //to be used by the runTrial method
     private IntersectionFinder<E> strategy;    // Each strategy provided by P1, P2, P3, P4
-    private float sum;   
-    
+    private float sum;    
     public StrategiesTimeCollection(IntersectionFinder<E> strategy) { 
         this.strategy = strategy; 
     } 

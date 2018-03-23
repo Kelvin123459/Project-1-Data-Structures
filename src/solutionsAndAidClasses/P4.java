@@ -1,4 +1,4 @@
-package solutions;
+package solutionsAndAidClasses;
 
 import java.util.ArrayList;
 import java.util.HashMap;
